@@ -12,11 +12,22 @@
     background: rgba(0,0 ,0 ,0.7 );
     min-height: 100vh;
 }
-#homeNav{
-    background: rgba(255,255 ,255 ,0.5 ) !important; 
-}
+
 .welcome-text img{
-width: 100px;
+    width: 100px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+.welcome-text{
+    min-height: 50vh;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
 }
 .welcome-text h4{
     color: #eee;
@@ -30,4 +41,75 @@ width: 100px;
     padding: 5px;
     border-radius: 4px;
    
+}
+
+.login{
+    max-width: 500px;
+    width: 90%;
+    background: rgba(255,255 ,255 ,0.5 ) ;
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.login h3{
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Lobster', cursive;
+}
+
+/* Id section */
+
+#homeNav{
+    background: rgba(255,255 ,255 ,0.5 ) !important; 
+}
+
+#about{
+
+    min-height: 100vh;
+
+}
+#about .card-1{
+    max-width: 600px;
+    width: 90%;
+    background: rgba(255,255 ,255 ,0.5 ) ;
+    padding: 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+#about .card-1 h5{
+    
+    font-family: 'Lobster', cursive;
+    font-size: 28px;
+}
+#contact{
+
+    min-height: 100vh;
+
+}
+#contact form{
+    max-width: 600px;
+    width: 90%;
+    background: rgba(255,255 ,255 ,0.5 ) ;
+    padding: 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+#contact form h3{
+
+    font-family: 'Lobster', cursive;
+    text-align: center;
+
+}
+textarea{
+    resize: none;
 }
