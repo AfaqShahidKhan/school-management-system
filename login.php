@@ -19,23 +19,34 @@
 
 
         <div class="d-flex justify-content-center align-items-center flex-column">
-            <form class="login">
+            <form class="login" method="post" action="req/login.php">
                 <div class="text-center">
                     <img src="logo.png" width="100">
                 </div>
                 <h3>Login</h3>
+                <?php 
+                if (isset($_GET['error'])) {?>
+
+
+                <div class="alert alert-danger" role="alert">
+                    <?= $_GET['error']
+                
+                ?>
+                </div>
+
+                <?php }?>
                 <div class="mb-3">
-                    <label class="form-label">Name</label>
-                    <input type="text" class="form-control">
+                    <label class="form-label">Username</label>
+                    <input type="text" class="form-control" name="username">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password">
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Login As</label>
-                    <select class="form-control">
+                    <select class="form-control" name="role">
                         <option value="1">Admin</option>
                         <option value="2">Student</option>
                         <option value="3">Teacher</option>
@@ -61,7 +72,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
+    </script>
 
 </body>
 
