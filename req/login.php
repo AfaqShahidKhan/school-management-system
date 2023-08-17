@@ -1,4 +1,11 @@
 <?php 
+error_reporting(E_ALL);
+ini_set('display_errors', 0); // Set to 0 to avoid duplicate error display
+ini_set('log_errors', 1);
+ini_set('error_log', 'error_log.txt');
+
+session_start();
+
 
 if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['role']) ) 
 {
@@ -37,10 +44,36 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['role
          $stm= $conn->prepare($sql);
          $stm->execute([$username]);
 
-         if ($stm->rowCount()==1) {
-          $user= $stm->fetch();
-          // $username= $user['username'];
-         }
+
+         if ($stm->rowCount() == 1) {
+          $user = $stm->fetch();
+          $dbUsername = $user['username'];
+          $dbPassword = $user['password'];
+          $fname = $user['fname'];
+          $id = $user['id'];
+      
+          if ($username === $dbUsername) {
+              if (password_verify($password, $dbPassword)) {
+                  $_SESSION['id'] = $id;
+                  $_SESSION['fname'] = $fname;
+                  $_SESSION['role'] = $role;
+                  $_SESSION['username'] = $dbUsername;
+          header("Location: ../home.php");
+          exit;
+      } else {
+          $em = "Incorrect username or password";
+          header("Location: ../login.php?error=$em");
+          exit;
+      }
+  } else {
+      $em = "Incorrect username or password";
+      header("Location: ../login.php?error=$em");
+      exit;
+  }
+}
+
+// ...
+
          else{
           $em= "Incorrect username or password";
         header("Location: ../login.php?error=$em");

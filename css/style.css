@@ -61,6 +61,10 @@
     font-family: 'Lobster', cursive;
 }
 
+.wide{
+    width: 450px;
+}
+
 /* Id section */
 
 #homeNav{
