@@ -1,3 +1,5 @@
+<!-- This is an extra file for the  login home page which is no longer in use -->
+
 <?php 
 
 session_start();
